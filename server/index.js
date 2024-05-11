@@ -145,9 +145,9 @@ app.post('/api/profile', upload.single('pic'), async (req, res) => {
   try {
       let user = await Profile.findOne({ uid: uid });
       if (user) {
-          user.name = name;
-          user.bio = bio;
-          user.pic = pic;
+          user.name = name ? name: user.name;
+          user.bio = bio ? bio: user.bio;
+          user.pic = pic==='' ? user.pic : pic;
           await user.save();
       } else {
           user = await new Profile({ uid: uid, name: name, bio: bio, pic: pic }).save();
