@@ -8,7 +8,7 @@ const app = express();
 const port = 5000;
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://veepthyofficial:C92cbX1xdWX4OqNt@chatmasala.y1st1bl.mongodb.net/?retryWrites=true&w=majority&appName=chatmasala', {
+mongoose.connect('', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
